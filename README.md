@@ -1,6 +1,6 @@
-# Testing PR https://github.com/stellar/soroban-cli/pull/159
+# Example Invoking a Soroban Contract via a Transaction
 
-This repo contains a test for testing https://github.com/stellar/soroban-cli/pull/159.
+This repo contains a test that demonstrates building a contract, deploying it, then invoking the contract via a Stellar transaction submitted to the soroban-cli serve server.
 
 ## Setup
 
