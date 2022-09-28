@@ -1,5 +1,7 @@
 # Testing PR https://github.com/stellar/soroban-cli/pull/159
 
+This repo contains a test for testing https://github.com/stellar/soroban-cli/pull/159.
+
 ## Setup
 
 Check out this repo:
