@@ -1,4 +1,4 @@
-# Generating a transaction for a contract
+# Testing PR https://github.com/stellar/soroban-cli/pull/159
 
 ## Setup
 
