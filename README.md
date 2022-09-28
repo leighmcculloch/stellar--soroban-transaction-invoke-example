@@ -76,7 +76,7 @@ Date: Wed, 28 Sep 2022 19:32:00 GMT
 
 Check the status of the transaction:
 ```
-ht POST :8080/api/v1/jsonrpc jsonrpc=2.0 method=getTransactionStatus params:='["e91bbb12c6c0dac8ad04cae8344d1103ca94cc364782c0147bbc82a755604a99"]'
+ht POST :8080/api/v1/jsonrpc jsonrpc=2.0 method=getTransactionStatus params:='["44ae10fdcf9b13514835298eea338522fb378847503e29e715f12f00b1678b6c"]'
 ```
 ```
 ...
@@ -87,7 +87,8 @@ Check that the data is updated:
 soroban-cli read --id 1
 ```
 ```
-"[[""Account"",""GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWHF""],""mykey""]",123
+"[[""Account"",""GAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWHF""],""mykey""]",2
+"[[""Account"",""GAAQCAIBAEAQCAIBAEAQCAIBAEAQCAIBAEAQCAIBAEAQCAIBAEAQDZ7H""],""mykey""]",123
 ```
 
 ---

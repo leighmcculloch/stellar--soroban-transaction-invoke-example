@@ -8,7 +8,7 @@ use stellar_xdr::{
 };
 
 fn main() -> Result<(), Box<dyn Error>> {
-    let account_id = [0u8; 32];
+    let account_id = [1u8; 32];
     eprintln!("Source Account: {}", hex::encode(account_id));
 
     let sequence_number = 1i64;
