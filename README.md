@@ -14,7 +14,7 @@ cd ..
 Install soroban-cli that has the `serveaccount` change from https://github.com/stellar/soroban-cli/pull/159:
 
 ```
-cargo install --locked --git https://github.com/stellar/soroban-cli --branch serveaccount soroban-cli
+cargo install --locked --git https://github.com/stellar/soroban-cli --rev ad2b35e soroban-cli
 ```
 
 ## Usage
