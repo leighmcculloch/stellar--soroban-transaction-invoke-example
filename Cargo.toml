@@ -1,0 +1,11 @@
+[package]
+name = "invoketest"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+stellar-xdr = { version = "0.0.2", features = ["next", "std", "base64", "serde"]}
+hex = "0.4.3"
+
+[patch.crates-io]
+stellar-xdr = { git = "https://github.com/stellar/rs-stellar-xdr", rev = "91405076" }
