@@ -35,7 +35,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     ))));
     eprintln!("Contract Args: {:?}", contract_args);
 
-    let function = HostFunction::Call;
+    let function = HostFunction::InvokeContract;
     eprintln!("Host Function Function: {:?}", function);
 
     let parameters = ScVec(vec![contract_id, contract_function, contract_args].try_into()?);

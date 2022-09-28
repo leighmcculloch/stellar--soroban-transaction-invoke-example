@@ -1,0 +1,12 @@
+[package]
+name = "tx"
+version = "0.0.0"
+authors = ["Stellar Development Foundation <info@stellar.org>"]
+license = "Apache-2.0"
+edition = "2021"
+rust-version = "1.64"
+publish = false
+
+[dependencies]
+stellar-xdr = { version = "0.0.2", features = ["next", "std", "base64", "serde"]}
+hex = "0.4.3"

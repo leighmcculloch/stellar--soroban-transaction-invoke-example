@@ -1,11 +1,33 @@
-[package]
-name = "invoketest"
-version = "0.1.0"
-edition = "2021"
+[workspace]
+resolver = "2"
 
-[dependencies]
-stellar-xdr = { version = "0.0.2", features = ["next", "std", "base64", "serde"]}
-hex = "0.4.3"
+members = [
+    "contract",
+    "tx",
+]
 
 [patch.crates-io]
-stellar-xdr = { git = "https://github.com/stellar/rs-stellar-xdr", rev = "91405076" }
+soroban-sdk = { git = "https://github.com/stellar/rs-soroban-sdk", rev = "157ff9ea" }
+soroban-spec = { git = "https://github.com/stellar/rs-soroban-sdk", rev = "157ff9ea" }
+soroban-sdk-macros = { git = "https://github.com/stellar/rs-soroban-sdk", rev = "157ff9ea" }
+soroban-env-common = { git = "https://github.com/stellar/rs-soroban-env", rev = "96d7a047" }
+soroban-env-guest = { git = "https://github.com/stellar/rs-soroban-env", rev = "96d7a047" }
+soroban-env-host = { git = "https://github.com/stellar/rs-soroban-env", rev = "96d7a047" }
+soroban-env-macros = { git = "https://github.com/stellar/rs-soroban-env", rev = "96d7a047" }
+soroban-native-sdk-macros = { git = "https://github.com/stellar/rs-soroban-env", rev = "96d7a047" }
+stellar-xdr = { git = "https://github.com/stellar/rs-stellar-xdr", rev = "f87409c3" }
+wasmi = { package = "soroban-wasmi", git = "https://github.com/stellar/wasmi", rev = "a61b6df" }
+
+[profile.release]
+opt-level = "z"
+overflow-checks = true
+debug = 0
+strip = "symbols"
+debug-assertions = false
+panic = "abort"
+codegen-units = 1
+lto = true
+
+[profile.release-with-logs]
+inherits = "release"
+debug-assertions = true
