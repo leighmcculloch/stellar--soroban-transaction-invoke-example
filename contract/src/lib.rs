@@ -6,6 +6,6 @@ pub struct Contract;
 #[contractimpl]
 impl Contract {
     pub fn put(e: Env, key: Symbol, val: u32) {
-        e.contract_data().set((e.invoker(), key), val)
+        e.contract_data().set((e.invoker(), key), val);
     }
 }

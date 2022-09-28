@@ -18,27 +18,26 @@ fn main() -> Result<(), Box<dyn Error>> {
         0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
         0, 1,
     ];
-    let contract_id = ScVal::Object(Some(ScObject::Bytes(contract_id_raw.clone().try_into()?)));
+    let contract_id = ScVal::Object(Some(ScObject::Bytes(contract_id_raw.try_into()?)));
     eprintln!("Contract ID: {:?}", contract_id);
 
     let contract_function = ScVal::Symbol("put".try_into()?);
     eprintln!("Contract Function: {:?}", contract_function);
 
-    let contract_args = ScVal::Object(Some(ScObject::Vec(ScVec(
+    let function = HostFunction::InvokeContract;
+    eprintln!("Host Function Function: {:?}", function);
+
+    let parameters = ScVec(
         vec![
+            contract_id,
+            contract_function,
             // Argument 0: Key
             ScVal::Symbol("mykey".try_into()?),
             // Argument 1: Value
             ScVal::U32(123),
         ]
         .try_into()?,
-    ))));
-    eprintln!("Contract Args: {:?}", contract_args);
-
-    let function = HostFunction::InvokeContract;
-    eprintln!("Host Function Function: {:?}", function);
-
-    let parameters = ScVec(vec![contract_id, contract_function, contract_args].try_into()?);
+    );
     eprintln!("Host Function Parameters: {:?}", parameters);
 
     let footprint = LedgerFootprint {
