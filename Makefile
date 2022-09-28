@@ -16,7 +16,7 @@ build-optimized:
 		--exclude tx \
 		-Z build-std=std,panic_abort \
 		-Z build-std-features=panic_immediate_abort
-	cd target-tiny/wasm32-unknown-unknown/release/ && \
+	cd target/wasm32-unknown-unknown/release/ && \
 		for i in *.wasm ; do \
 			wasm-opt -Oz "$$i" -o "$$i.tmp" && mv "$$i.tmp" "$$i"; \
 			ls -l "$$i"; \
